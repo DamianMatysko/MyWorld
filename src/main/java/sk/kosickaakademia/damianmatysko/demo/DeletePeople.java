@@ -17,7 +17,7 @@ public class DeletePeople {
 
         try {
             session.beginTransaction();
-            int id = 10;
+            int id = 1;
             People people = session.get(People.class, id);
             session.delete(people);
             session.getTransaction().commit();

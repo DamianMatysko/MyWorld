@@ -16,7 +16,7 @@ public class CreateNationality {
         Session session = sessionFactory.getCurrentSession();
 
         try{
-            Nationality nationality = new Nationality("Slovakia","49,035 km²");
+            Nationality nationality = new Nationality("Slovakia","49,035 km²","2");
             session.beginTransaction();
             session.save(nationality);
             session.getTransaction().commit();

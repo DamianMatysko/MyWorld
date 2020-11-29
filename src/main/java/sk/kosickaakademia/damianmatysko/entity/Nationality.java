@@ -13,8 +13,13 @@ public class Nationality {
     private int id;
     @Column(name = "name_of_country")
     private String nameOfCountry;
-    @Column(name = "area")
+    @Column(name = "Area")
     private String area;
+
+    @Column(name = "population")
+    private String population;
+
+
     @OneToMany(fetch = FetchType.LAZY,
             mappedBy = "nationality",
             cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
@@ -23,9 +28,18 @@ public class Nationality {
     public Nationality() {
     }
 
-    public Nationality(String nameOfCountry, String area) {
+    public Nationality(String nameOfCountry, String area, String population) {
         this.nameOfCountry = nameOfCountry;
         this.area = area;
+        this.population = population;
+    }
+
+    public String getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(String population) {
+        this.population = population;
     }
 
     public int getId() {
@@ -66,7 +80,7 @@ public class Nationality {
                 "id=" + id +
                 ", nameOfCountry='" + nameOfCountry + '\'' +
                 ", area='" + area + '\'' +
-                ", peopleList=" + peopleList +
+                ", population='" + population + '\'' +
                 '}';
     }
 

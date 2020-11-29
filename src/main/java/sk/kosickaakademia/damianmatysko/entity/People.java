@@ -14,7 +14,7 @@ public class People {
     @Column(name = "year_of_birth")
     private String yearOfBirth;
 
-    @JoinColumn(name = "nationality")
+    @JoinColumn(name = "nationality_id")
     @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     private Nationality nationality;
 
@@ -64,7 +64,6 @@ public class People {
                 "id=" + id +
                 ", fullName='" + fullName + '\'' +
                 ", yearOfBirth='" + yearOfBirth + '\'' +
-                ", nationality=" + nationality +
                 '}';
     }
 }
